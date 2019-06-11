@@ -1,0 +1,17 @@
+
+<!-- Loads the path to your static files -->
+{% extends 'music/base.html' %}
+
+{% block body %}
+
+        <h3>List of all the Albums</h3>
+        <ul title="Albums">
+            {% for album in all_albums %}
+            <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
+            {% endfor %}
+        </ul>
+
+<!--        <h3> You don't have any albums</h3>-->
+
+
+{% endblock %}
